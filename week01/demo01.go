@@ -10,8 +10,8 @@ var (
 )
 
 func main() {
-//	testArray()
-    testDefer()
+	testArray()
+//    testDefer()
 }
 
 func convertType() {
