@@ -14,7 +14,8 @@ COPY ./ src
 RUN go build -o httpserver src/homework.go
 
 
-FROM builder
+FROM busybox
+COPY --from=builder /app/httpserver /app/httpserver
 WORKDIR /app
 EXPOSE 8888
 CMD ["./httpserver"]
