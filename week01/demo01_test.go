@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	//"github.com/yexxxx/cncamp/week03"
 	"math/rand"
 	"reflect"
 	"strconv"
@@ -39,6 +40,7 @@ func TestSwitch(t *testing.T) {
 		fmt.Printf("is %d \n", 2)
 	default:
 		fmt.Printf("is default %d", condtion)
+
 	}
 }
 
@@ -70,10 +72,10 @@ func TestMap(t *testing.T) {
 	}
 }
 
-//import cycle not allowed
+// import cycle not allowed
 //func TestInit(t *testing.T) {
-//  user := week03.User{}
-//  fmt.Println(user)
+//	user := week03.User{}
+//	fmt.Println(user)
 //}
 
 func TestCloure(t *testing.T) {
@@ -218,8 +220,8 @@ func TestContext(t *testing.T) {
 func TestProducerAndConsumer(t *testing.T) {
 	intChan := make(chan int, 10)
 
-    go producer(intChan)
-    consumer(intChan)
+	go producer(intChan)
+	consumer(intChan)
 }
 
 func producer(intChan chan<- int) {

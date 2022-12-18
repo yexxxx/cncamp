@@ -1,0 +1,23 @@
+FROM golang:1.19.4-alpine3.17 AS builder
+
+LABEL stage=gobuilder
+
+ENV CGO_ENABLED 0
+ENV GOOS linux
+ENV GOARCH=arm64
+# ENV GOARCH=amd64
+ENV GOPROXY https://goproxy.cn,direct
+
+WORKDIR /app
+
+COPY ./ src
+RUN go build -o httpserver src/homework.go
+
+
+FROM builder
+WORKDIR /app
+EXPOSE 8888
+CMD ["./httpserver"]
+
+
+

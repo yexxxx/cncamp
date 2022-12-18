@@ -1,19 +1,18 @@
 package week03
 
 import (
-    "fmt"
-    "github.com/yexxxx/cncamp/week02"
+	"fmt"
+	"github.com/yexxxx/cncamp/week01/cycle"
 )
 
 var (
-    Pack week02.Pack
+	Pack cycle.Pack
 )
 
-
 func init() {
-    Pack = week02.Pack{Name: "yex", Location: "China"}
-    println("pkg week02 init")
-    fmt.Print("%T",Pack)
+	Pack = cycle.Pack{Name: "yex", Location: "China"}
+	println("pkg week02 init")
+	fmt.Print("%T", Pack)
 }
 
 type User struct {
